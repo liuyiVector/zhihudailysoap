@@ -1,4 +1,4 @@
-package pku.vector.zhihudaily;
+package pku.miao.zhihudaily;
 
 import org.junit.Test;
 

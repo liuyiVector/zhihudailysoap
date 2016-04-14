@@ -1,4 +1,4 @@
-package pku.vector.zhihudaily;
+package pku.miao.zhihudaily;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -12,6 +12,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import pku.miao.zhihudaily.fragment.RecommendFragment;
+import pku.miao.zhihudaily.presenter.RecommendPresenter;
+import pku.miao.zhihudaily.util.ActivityUtils;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -40,6 +44,22 @@ public class HomeActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        initView();
+    }
+
+    void initView(){
+
+        RecommendFragment recommendFragment = (RecommendFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.content_fl);
+
+        if (recommendFragment == null) {
+            recommendFragment = RecommendFragment.newInstance("recommend");
+            ActivityUtils.addFragmentToActivity(getSupportFragmentManager(),
+                    recommendFragment, R.id.content_fl);
+        }
+        new RecommendPresenter(recommendFragment);
+
     }
 
     @Override

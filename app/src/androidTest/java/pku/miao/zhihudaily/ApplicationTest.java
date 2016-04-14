@@ -1,4 +1,4 @@
-package pku.vector.zhihudaily;
+package pku.miao.zhihudaily;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
