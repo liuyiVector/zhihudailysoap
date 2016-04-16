@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import pku.miao.zhihudaily.R;
 import pku.miao.zhihudaily.adapter.RecommendAdapter;
 import pku.miao.zhihudaily.bean.LatestNews;
+import pku.miao.zhihudaily.component.view.SpacesItemDecoration;
 import pku.miao.zhihudaily.contract.RecommendContract;
 
 /**
@@ -71,6 +72,8 @@ public class RecommendFragment extends Fragment implements RecommendContract.Vie
 
         hot_rcv.setLayoutManager(new LinearLayoutManager(getActivity()));
         hot_rcv.setHasFixedSize(true);
+        int spacingInPixels = 8;
+        hot_rcv.addItemDecoration(new SpacesItemDecoration(spacingInPixels));
 
         swp = (SwipeRefreshLayout) root.findViewById(R.id.id_swp);
 
