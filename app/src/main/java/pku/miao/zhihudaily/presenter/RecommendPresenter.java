@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.util.Log;
 
 import pku.miao.zhihudaily.bean.LatestNews;
-import pku.miao.zhihudaily.component.component.RetrofitSingleton;
+import pku.miao.zhihudaily.component.RetrofitSingleton;
 import pku.miao.zhihudaily.contract.RecommendContract;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;

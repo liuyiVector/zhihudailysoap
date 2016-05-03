@@ -36,4 +36,11 @@ public class ActivityUtils {
         transaction.commit();
     }
 
+    public static void replaceFragment(FragmentManager fragmentManager,
+                                       Fragment fragment, int frameId){
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(frameId, fragment);
+        transaction.commit();
+    }
+
 }

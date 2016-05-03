@@ -8,8 +8,19 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
     <style name="MyToolbar" parent="Widget.AppCompat.Toolbar">
         <item name="contentInsetStart">0dp</item><!-- 设置该属性解决空白部分-->
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="actionMenuTextColor">@color/colorAbTxt</item> <!--  敲定颜色-->
+        <item name="android:textColor">@color/colorAbTxt</item>
+        <item name="android:popupTheme">@style/ThemeOverlay.AppCompat.Dark</item>
+    </style>
+
+    <style name="toolbar" parent="MyToolbar">
+        <item name="android:textColor">@color/colorAbTxt</item>
+        <item name="android:background">?attr/colorPrimary</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -22,5 +33,9 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.NoActionBar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.NoActionBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

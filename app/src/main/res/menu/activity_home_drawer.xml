@@ -3,34 +3,33 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/home"
+            android:enabled="true"
+            android:checked="true"
+            android:title="首页" />
+        <item android:id="@+id/xlx"
+            android:title="日常心理学"/>
+        <item android:id="@+id/yhtj"
+            android:title="用户推荐日报"/>
+        <item android:id="@+id/dy"
+            android:title="电影日报"/>
+        <item android:id="@+id/bxwl"
+            android:title="不许无聊"/>
+        <item android:id="@+id/sj"
+            android:title="设计日报"/>
+        <item android:id="@+id/dgs"
+            android:title="大公司日报"/>
+        <item android:id="@+id/cj"
+            android:title="财经日报"/>
+        <item android:id="@+id/hlw"
+            android:title="互联网安全"/>
+        <item android:id="@+id/ksyx"
+            android:title="开始游戏"/>
+        <item android:id="@+id/yy"
+            android:title="音乐日报"/>
+        <item android:id="@+id/dm"
+            android:title="动漫日报"/>
+        <item android:id="@+id/ty"
+            android:title="体育日报"/>
     </group>
-
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
-
 </menu>
