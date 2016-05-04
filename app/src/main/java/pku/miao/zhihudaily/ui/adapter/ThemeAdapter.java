@@ -87,6 +87,8 @@ public class ThemeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             ((StoryViewHolder) holder).story_title_tv.setText(story.getTitle());
             if(story.getImages()!=null & story.getImages().size() > 0) {
                 ((StoryViewHolder) holder).story_imv.setImageURI(Uri.parse(story.getImages().get(0)));
+            }else{
+                ((StoryViewHolder) holder).story_imv.setImageURI(null);
             }
             ((StoryViewHolder) holder).cardView.setOnClickListener(new View.OnClickListener() {
                 @Override

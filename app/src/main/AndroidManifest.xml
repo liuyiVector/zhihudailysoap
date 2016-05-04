@@ -26,6 +26,10 @@
             android:name=".ui.activity.DetailActivity"
             android:label="@string/title_activity_detail"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.activity.ThemeDetailActivity"
+            android:label="@string/title_activity_detail"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ui.activity.CommentsActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

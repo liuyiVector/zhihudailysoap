@@ -102,12 +102,13 @@ public class RecommendFragment extends Fragment implements RecommendContract.Vie
 
     @Override
     public void onRefresh() {
-
+        mPresenter.start();
     }
 
     @Override
     public void showStory(LatestNews latestNews) {
         Log.v("miao", "story date: " + latestNews.getDate() );
+        swp.setRefreshing(false);
         recommendAdapter.refresh(latestNews);
     }
 

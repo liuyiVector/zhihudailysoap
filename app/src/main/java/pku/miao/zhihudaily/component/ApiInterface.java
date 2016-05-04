@@ -10,6 +10,7 @@ import pku.miao.zhihudaily.bean.NewsDetail;
 import pku.miao.zhihudaily.bean.NewsExtra;
 import pku.miao.zhihudaily.bean.Subjects;
 import pku.miao.zhihudaily.bean.Theme;
+import pku.miao.zhihudaily.bean.ThemeStoryDetail;
 import retrofit.http.GET;
 import retrofit.http.Path;
 import retrofit.http.Query;
@@ -29,6 +30,9 @@ public interface ApiInterface {
     //获取某新闻的详细信息
     @GET("news/{newsid}") Observable<NewsDetail> newsDetail(@Path("newsid") int newsid);
 
+    //获取某主题日报新闻的详细信息
+    @GET("news/{newsid}") Observable<ThemeStoryDetail> themeNewsDetail(@Path("newsid") int newsid);
+
     //获取某新闻的额外信息，主要就是点赞和评论的数目
     @GET("story-extra/{newsid}") Observable<NewsExtra> newsExtra(@Path("newsid") int newsid);
 
@@ -40,8 +44,12 @@ public interface ApiInterface {
     //获取主题日报列表
     @GET("themes") Observable<Subjects> themes();
 
+
     //获取主题日报内容
     @GET("theme/{theme_id}") Observable<Theme> themeContent(@Path("theme_id") int theme_id);
+
+    //专栏之前的新闻
+    @GET("theme/{theme_id}/before/{news_id}") Observable<Theme> pastThemeContent(@Path("theme_id") int theme_id, @Path("news_id") int news_id);
 
 
 

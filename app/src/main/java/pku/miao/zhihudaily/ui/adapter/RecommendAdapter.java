@@ -31,6 +31,7 @@ import pku.miao.zhihudaily.bean.TopStory;
 public class RecommendAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
 
+
     public interface OnStoryItemClick {
         void onStoryItemClick(int position, int id);
     }

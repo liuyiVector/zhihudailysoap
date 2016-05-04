@@ -6,8 +6,6 @@ import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -24,9 +22,8 @@ import pku.miao.zhihudaily.bean.NewsDetail;
 import pku.miao.zhihudaily.bean.NewsExtra;
 import pku.miao.zhihudaily.contract.NewsDetailContract;
 import pku.miao.zhihudaily.presenter.NewsDetailPresenter;
-import pku.miao.zhihudaily.presenter.RecommendPresenter;
 
-public class DetailActivity extends AppCompatActivity implements NewsDetailContract.View{
+public class ThemeDetailActivity extends AppCompatActivity implements NewsDetailContract.View{
 
 
     WebView content_wv;
@@ -117,19 +114,12 @@ public class DetailActivity extends AppCompatActivity implements NewsDetailContr
 
     @Override
     public void showNews(NewsDetail newsDetail) {
-        //type为1表示普通的日报内容，0为主题日报内容
-        if(newsDetail.getImage() != null) {
-            tpoic_imv.setImageURI(Uri.parse(newsDetail.getImage()));
-            //增加一个蒙版的效果
-            tpoic_imv.setColorFilter(Color.GRAY, PorterDuff.Mode.MULTIPLY);
-            image_source_tv.setText(newsDetail.getImage_source());
-        }else{
-            tpoic_imv.setImageURI(Uri.parse(newsDetail.getTheme().thumbnail));
-            //增加一个蒙版的效果
-            tpoic_imv.setColorFilter(Color.GRAY, PorterDuff.Mode.MULTIPLY);
-        }
-        Log.v("miao", newsDetail.getHTML());
+        tpoic_imv.setImageURI(Uri.parse(newsDetail.getImage()));
+        //增加一个蒙版的效果
+        tpoic_imv.setColorFilter(Color.GRAY, PorterDuff.Mode.MULTIPLY);
         title_tv.setText(newsDetail.getTitle());
+        image_source_tv.setText(newsDetail.getImage_source());
+        Log.v("miao", newsDetail.getHTML());
         content_wv.loadData(newsDetail.getHTML(),"text/html; charset=UTF-8", null);
     }
 
@@ -140,7 +130,7 @@ public class DetailActivity extends AppCompatActivity implements NewsDetailContr
         comment_imv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DetailActivity.this, CommentsActivity.class);
+                Intent intent = new Intent(ThemeDetailActivity.this, CommentsActivity.class);
                 intent.putExtra("newsID", newsID);
                 intent.putExtra("long_comments", newsExtra.long_comments);
                 intent.putExtra("short_comments", newsExtra.short_comments);

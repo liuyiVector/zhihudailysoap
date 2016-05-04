@@ -76,6 +76,10 @@ public class NewsDetail {
     List<String> css;
 
 
+    @SerializedName("theme")@Expose
+    Subject theme;
+
+
     public String getBody() {
         return body;
     }
@@ -172,6 +176,13 @@ public class NewsDetail {
         this.css = css;
     }
 
+    public Subject getTheme() {
+        return theme;
+    }
+
+    public void setTheme(Subject theme) {
+        this.theme = theme;
+    }
 
     public String getHTML(){
         String sb = "";

@@ -83,6 +83,18 @@ public class ThemeFragment extends Fragment implements ThemeContract.View, Swipe
         themeAdapter.setOnStoryItemClick(this);
         hot_rcv.setAdapter(themeAdapter);
 
+        hot_rcv.setOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+            }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+            }
+        });
+
         swp = (SwipeRefreshLayout) root.findViewById(R.id.id_swp);
 
         swp.setOnRefreshListener(this);
@@ -104,11 +116,12 @@ public class ThemeFragment extends Fragment implements ThemeContract.View, Swipe
 
     @Override
     public void onRefresh() {
-
+        mPresenter.start();
     }
 
     @Override
     public void showStory(Theme theme) {
+        swp.setRefreshing(false);
         themeAdapter.refresh(theme);
     }
 
